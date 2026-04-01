@@ -9,20 +9,32 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                cream: '#f5f0e8',
-                'cream-dark': '#ede6d6',
-                olive: '#5a6144',
-                'olive-light': '#7a8264',
-                earth: '#8b7355',
-                'earth-light': '#a89070',
-                charcoal: '#2a2a2a',
-                'charcoal-light': '#4a4a4a',
-                'warm-white': '#fdfaf5',
+                // Brand palette – Echoes of the Andes
+                crema: '#F5EDE0',
+                'crema-dark': '#EAD9C4',
+                tierra: '#483331',
+                'tierra-light': '#6B4E4C',
+                cielo: '#273761',
+                'cielo-light': '#3D5490',
+                bosque: '#41452B',
+                arcilla: '#854E3D',
+                'arcilla-light': '#A86A57',
+                ocaso: '#CEAB83',
+                kantuta: '#B466A3',
+                // Aliases kept for backwards-compat with existing Tailwind classes
+                charcoal: '#483331',
+                'charcoal-light': '#6B4E4C',
+                earth: '#854E3D',
+                'earth-light': '#A86A57',
+                cream: '#F5EDE0',
+                'cream-dark': '#EAD9C4',
+                'warm-white': '#F5EDE0',
                 'nav-bg': 'rgba(0,0,0,0.35)',
             },
             fontFamily: {
-                serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-                sans: ['Montserrat', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                display: ['"Big Shoulders Display"', 'sans-serif'],
+                serif: ['"Big Shoulders Display"', 'sans-serif'],
+                sans: ['"Smooch Sans"', 'Helvetica Neue', 'Arial', 'sans-serif'],
             },
             letterSpacing: {
                 widest: '0.25em',

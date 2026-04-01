@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;400;500;600;700;800;900&family=Smooch+Sans:wght@100;200;300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --cream: #f5f0e8;
-  --cream-dark: #ede6d6;
-  --olive: #5a6144;
-  --earth: #8b7355;
-  --charcoal: #2a2a2a;
+  --crema: #F5EDE0;
+  --crema-dark: #EAD9C4;
+  --cielo: #273761;
+  --arcilla: #854E3D;
+  --tierra: #483331;
+  --bosque: #41452B;
+  --ocaso: #CEAB83;
+  --kantuta: #B466A3;
 }
 
 html {
@@ -21,9 +24,9 @@ html {
 }
 
 body {
-  background-color: var(--cream);
-  color: var(--charcoal);
-  font-family: 'Montserrat', sans-serif;
+  background-color: var(--crema);
+  color: var(--tierra);
+  font-family: 'Smooch Sans', sans-serif;
   overflow-x: hidden;
 }
 
@@ -33,27 +36,27 @@ body {
   }
 
   .nav-link-dark {
-    @apply text-[10px] tracking-[0.2em] uppercase text-charcoal/80 hover:text-charcoal transition-colors duration-300 cursor-pointer whitespace-nowrap;
+    @apply text-[10px] tracking-[0.2em] uppercase text-tierra/80 hover:text-tierra transition-colors duration-300 cursor-pointer whitespace-nowrap;
   }
 
   .book-btn {
-    @apply border border-white/70 text-white text-[10px] tracking-[0.2em] uppercase px-5 py-2 hover:bg-white hover:text-charcoal transition-all duration-300 cursor-pointer;
+    @apply border border-white/70 text-white text-[10px] tracking-[0.2em] uppercase px-5 py-2 hover:bg-white hover:text-tierra transition-all duration-300 cursor-pointer;
   }
 
   .book-btn-dark {
-    @apply border border-charcoal text-charcoal text-[10px] tracking-[0.2em] uppercase px-5 py-2 hover:bg-charcoal hover:text-white transition-all duration-300 cursor-pointer;
+    @apply border border-tierra text-tierra text-[10px] tracking-[0.2em] uppercase px-5 py-2 hover:bg-tierra hover:text-white transition-all duration-300 cursor-pointer;
   }
 
   .section-title {
-    @apply font-serif text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-charcoal leading-tight;
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-wide text-tierra leading-tight;
   }
 
   .overline-text {
-    @apply text-[10px] tracking-[0.3em] uppercase text-earth font-sans;
+    @apply text-[10px] tracking-[0.3em] uppercase text-arcilla font-sans;
   }
 
   .cta-link {
-    @apply text-[11px] tracking-[0.25em] uppercase border-b border-charcoal pb-0.5 hover:border-earth hover:text-earth transition-colors duration-300 cursor-pointer inline-block;
+    @apply text-[11px] tracking-[0.25em] uppercase border-b border-tierra pb-0.5 hover:border-arcilla hover:text-arcilla transition-colors duration-300 cursor-pointer inline-block;
   }
 }
 

@@ -57,7 +57,7 @@ export default function HeroSection() {
     };
 
     return (
-        <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-charcoal">
+        <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-tierra">
             {/* ── Video A ── */}
             <video
                 ref={refA}
@@ -105,10 +105,10 @@ export default function HeroSection() {
                         >
                             {/* Heading */}
                             <h1
-                                className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-wider text-white leading-tight"
+                                className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-wider text-white leading-tight"
                                 style={{ textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}
                             >
-                                DISCOVER A NEW<br className="hidden sm:block" /> PACE OF TRAVEL
+                                ECHOES OF<br className="hidden sm:block" /> THE ANDES
                             </h1>
 
                             {/* Learn More Button */}
@@ -116,10 +116,10 @@ export default function HeroSection() {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.8 }}
-                                className="inline-block border border-white/60 text-white text-[10px] tracking-[0.3em] uppercase px-10 py-3.5 hover:bg-white hover:text-charcoal transition-all duration-500 backdrop-blur-sm"
+                                className="inline-block border border-white/60 text-white text-[10px] tracking-[0.3em] uppercase px-10 py-3.5 hover:bg-white hover:text-tierra transition-all duration-500 backdrop-blur-sm"
                                 onClick={scrollDown}
                             >
-                                LEARN MORE
+                                EXPLORE THE ANDES
                             </motion.button>
                         </motion.div>
                     )}

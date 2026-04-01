@@ -10,77 +10,76 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 ────────────────────────────────────────────────────────── */
 const slides = [
     {
-        type: 'video' as const,
-        src: 'https://www.pexels.com/es-es/download/video/28345588/',
-        alt: 'Marguerite Belmond Boat Interior',
-        overline: 'LES BATEAUX BELMOND',
-        heading: 'DISCOVER\nMARGUERITE, THE\nNEW BELMOND BOAT',
+        type: 'image' as const,
+        src: 'https://images.pexels.com/photos/2356059/pexels-photo-2356059.jpeg?auto=compress&w=900',
+        alt: 'Machu Picchu at sunrise',
+        overline: 'PATRIMONIO DE LA HUMANIDAD',
+        heading: 'MACHU\nPICCHU,\nLA CIUDAD PERDIDA',
         body: [
-            'Introducing Marguerite, the latest icon from our Belmond boats collection. With modern details and a bright palette, she invites you to explore the region of Burgundy in a warm and delicate atmosphere.',
-            'Jump on board for a unique taste of French delicacies, a relaxing pace of travel as well as delicious menus curated by your own private chef.',
+            'Suspendida entre nubes a 2.430 metros de altura, Machu Picchu es una de las maravillas más extraordinarias del mundo. Sus terrazas de piedra y templos del sol guardan siglos de historia inca.',
+            'Cada amanecer sobre la ciudadela es un eco que resuena entre las montañas, recordándonos que este territorio vive y respira con nosotros.',
         ],
-        cta: 'DISCOVER MARGUERITE',
-    },
-    {
-        type: 'video' as const,
-        src: 'https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4',
-        poster: 'https://images.pexels.com/photos/5490367/pexels-photo-5490367.jpeg?auto=compress&w=900',
-        alt: 'Luxury Train Interior',
-        overline: 'BELMOND GRAND HIBERNIAN',
-        heading: 'IRELAND\'S\nMOST STORIED\nRAIL JOURNEY',
-        body: [
-            'Trace the emerald contours of Ireland aboard the Grand Hibernian - a five-star hotel on wheels that brings together world-class cuisine, bespoke service, and breathtaking scenery.',
-            'Each cabin blends contemporary Irish craft with timeless elegance, creating a moving sanctuary like no other.',
-        ],
-        cta: 'DISCOVER GRAND HIBERNIAN',
+        cta: 'EXPLORAR MACHU PICCHU',
     },
     {
         type: 'image' as const,
-        src: 'https://images.pexels.com/photos/1488327/pexels-photo-1488327.jpeg?auto=compress&w=900',
-        alt: 'Luxury Villa Terrace',
-        overline: 'BELMOND VILLA SAN MICHELE',
-        heading: 'A MONASTERY\nTURNED\nSANCTUARY',
+        src: 'https://images.pexels.com/photos/3722818/pexels-photo-3722818.jpeg?auto=compress&w=900',
+        alt: 'Valle Sagrado de los Incas',
+        overline: 'CUSCO & VALLE SAGRADO',
+        heading: 'EL CORAZÓN\nDEL MUNDO\nINCА',
         body: [
-            'Perched on a Fiesole hillside overlooking Florence, Villa San Michele was designed by Michelangelo and exudes Renaissance splendour.',
-            'Lose yourself in the serene gardens, savor Tuscan cuisine on the loggia, and experience history made intimately personal.',
+            'El Valle Sagrado serpentea entre Pisac y Ollantaytambo, flanqueado por ruinas andinas y mercados locales que mantienen vivas las tradiciones milenarias.',
+            'Aquí el tiempo fluye diferente. Los colores de los tejidos, el aroma de la tierra húmeda y el sonido de la quena te envuelven en una experiencia que no termina cuando regresas a casa.',
         ],
-        cta: 'DISCOVER VILLA SAN MICHELE',
+        cta: 'EXPLORAR EL VALLE SAGRADO',
+    },
+    {
+        type: 'video' as const,
+        src: 'https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4',
+        alt: 'Cañón del Colca',
+        overline: 'AREQUIPA & COLCA',
+        heading: 'EL CAÑÓN\nMÁS PROFUNDO\nDEL MUNDO',
+        body: [
+            'El Cañón del Colca, hogar del majestuoso cóndor andino, te invita a contemplar paisajes de una escala que desafía la imaginación.',
+            'Desde los miradores de Cruz del Cóndor, observa cómo estas aves de 3 metros de envergadura surcan las corrientes térmicas en silencio absoluto.',
+        ],
+        cta: 'EXPLORAR EL COLCA',
+    },
+    {
+        type: 'video' as const,
+        src: 'https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_30fps.mp4',
+        alt: 'Amazonía peruana',
+        overline: 'SELVA AMAZÓNICA',
+        heading: 'LA AMAZONÍA,\nEL PULMÓN\nDEL MUNDO',
+        body: [
+            'El Perú alberga una de las porciones más biodiversas de la cuenca amazónica. Lodges sostenibles en Madre de Dios o Loreto te conectan con este ecosistema único.',
+            'Recorridos nocturnos, avistamiento de aves y encuentros con comunidades indígenas convierten cada jornada en un aprendizaje que transforma.',
+        ],
+        cta: 'EXPLORAR LA AMAZONÍA',
     },
     {
         type: 'image' as const,
-        src: 'https://images.pexels.com/photos/1458457/pexels-photo-1458457.jpeg?auto=compress&w=900',
-        alt: 'Coastal Luxury Retreat',
-        overline: 'BELMOND SPLENDIDO',
-        heading: 'THE JEWEL\nOF\nPORTOFINO',
+        src: 'https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg?auto=compress&w=900',
+        alt: 'Lago Titicaca',
+        overline: 'PUNO & LAGO TITICACA',
+        heading: 'EL LAGO\nMÁS ALTO\nDEL MUNDO',
         body: [
-            'Clinging to the hillside above Portofino\'s shimmering bay, Belmond Hotel Splendido has been the ultimate synonym for glamour since 1901.',
-            'A stay here is more than a hotel experience — it is an immersion into the dolce vita, surrounded by lemon-scented gardens and sapphire waters.',
+            'A 3.812 m sobre el nivel del mar, el Lago Titicaca es cuna de la civilización andina. Las islas flotantes de los Uros y la isla Taquile guardan tradiciones que se remontan a siglos.',
+            'Navegar en sus aguas azules con la luz dorada del altiplano es una experiencia que se queda grabada en la memoria para siempre.',
         ],
-        cta: 'DISCOVER SPLENDIDO',
+        cta: 'EXPLORAR EL TITICACA',
     },
     {
         type: 'video' as const,
-        src: 'https://www.pexels.com/es-es/download/video/29633667/',
-        alt: 'Luxury Safari Experience',
-        overline: 'BELMOND SAFARIS',
-        heading: 'AFRICA\'S\nGREATEST\nWILDERNESS',
+        src: 'https://videos.pexels.com/video-files/3886164/3886164-uhd_2560_1440_25fps.mp4',
+        alt: 'Lima, capital gastronómica',
+        overline: 'LIMA & LA COSTA',
+        heading: 'LIMA,\nCAPITAL\nGASTRONÓMICA',
         body: [
-            'Experience the untamed beauty of Africa\'s wilderness at Belmond Savute Elephant Lodge — a retreat where nature sets the agenda and luxury follows seamlessly.',
-            'Morning game drives, sundowner cocktails, and starlit dinners beneath vast skies await.',
+            'Lima no es solo una puerta de entrada al Perú; es un destino en sí misma. Su escena culinaria, reconocida mundialmente, fusiona tradiciones andinas, amazónicas y de la costa.',
+            'Del Miraflores colonial al circuito de arte y gastronomía de Barranco, Lima es la ciudad donde los ecos del pasado se encuentran con la creatividad del presente.',
         ],
-        cta: 'DISCOVER SAFARIS',
-    },
-    {
-        type: 'video' as const,
-        src: 'https://www.pexels.com/es-es/download/video/14865460/',
-        alt: 'Orient Express Suite',
-        overline: 'VENICE SIMPLON-ORIENT-EXPRESS',
-        heading: 'THE WORLD\'S\nMOST ICONIC\nTRAIN',
-        body: [
-            'Step aboard and slip into a world of intrigue and elegance. The Venice Simplon-Orient-Express carries you through Europe\'s most spectacular landscapes in unparalleled 1920s splendour.',
-            'Private cabins, white-glove dining, and the gentle rhythm of the rails — pure romance in motion.',
-        ],
-        cta: 'DISCOVER ORIENT EXPRESS',
+        cta: 'EXPLORAR LIMA',
     },
 ];
 
@@ -130,14 +129,14 @@ export default function BelmondSection() {
     };
 
     return (
-        <section id="belmond-section" className="bg-warm-white py-16 md:py-24">
+        <section id="belmond-section" className="bg-crema py-16 md:py-24">
             {/* ── Section Title ── */}
             <div className="text-center mb-10 md:mb-14 px-6">
-                <p className="overline-text mb-3">Collection</p>
-                <h2 className="font-serif text-3xl md:text-4xl font-light tracking-wider text-charcoal">
-                    NEW FROM BELMOND
+                <p className="overline-text mb-3">Experiencias</p>
+                <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-wider text-tierra">
+                    ECHOES OF THE ANDES
                 </h2>
-                <div className="mt-4 h-px w-16 bg-earth mx-auto" />
+                <div className="mt-4 h-px w-16 bg-arcilla mx-auto" />
             </div>
 
             {/* ── Main Carousel Container ── */}
@@ -160,7 +159,7 @@ export default function BelmondSection() {
                                     className="absolute inset-0"
                                 >
                                     {slide.type === 'video' ? (
-                                        <VideoSlide src={slide.src} poster={slide.poster} />
+                                        <VideoSlide src={slide.src} />
                                     ) : (
                                         // eslint-disable-next-line @next/next/no-img-element
                                         <img
@@ -197,8 +196,8 @@ export default function BelmondSection() {
                                     onClick={() => go(i)}
                                     aria-label={`Go to slide ${i + 1}`}
                                     className={`transition-all duration-300 ${i === current
-                                        ? 'w-4 h-4 border-2 border-charcoal bg-charcoal rotate-45'
-                                        : 'w-2.5 h-2.5 border border-charcoal/40 rotate-45 hover:border-charcoal'
+                                        ? 'w-4 h-4 border-2 border-tierra bg-tierra rotate-45'
+                                        : 'w-2.5 h-2.5 border border-tierra/40 rotate-45 hover:border-tierra'
                                         }`}
                                 />
                             ))}
@@ -218,15 +217,15 @@ export default function BelmondSection() {
                             >
                                 <p className="overline-text">{slide.overline}</p>
 
-                                <h3 className="font-serif text-3xl md:text-4xl font-light text-charcoal leading-snug whitespace-pre-line">
+                                <h3 className="font-display text-3xl md:text-4xl font-semibold text-tierra leading-snug whitespace-pre-line">
                                     {slide.heading}
                                 </h3>
 
-                                <div className="h-px w-12 bg-earth/60" />
+                                <div className="h-px w-12 bg-arcilla/60" />
 
                                 <div className="space-y-4">
                                     {slide.body.map((para, i) => (
-                                        <p key={i} className="text-charcoal-light text-sm leading-relaxed font-light">
+                                        <p key={i} className="text-tierra-light text-sm leading-relaxed font-light">
                                             {para}
                                         </p>
                                     ))}
@@ -242,18 +241,18 @@ export default function BelmondSection() {
                         <div className="hidden lg:flex items-center gap-4 mt-10">
                             <button
                                 onClick={prev}
-                                className="w-10 h-10 border border-charcoal/30 hover:border-charcoal flex items-center justify-center transition-all duration-300 group"
+                                className="w-10 h-10 border border-tierra/30 hover:border-tierra flex items-center justify-center transition-all duration-300 group"
                             >
-                                <ChevronLeft size={16} strokeWidth={1.5} className="text-charcoal/60 group-hover:text-charcoal transition-colors" />
+                                <ChevronLeft size={16} strokeWidth={1.5} className="text-tierra/60 group-hover:text-tierra transition-colors" />
                             </button>
-                            <span className="text-[10px] tracking-[0.2em] text-charcoal/50 uppercase font-sans">
+                            <span className="text-[10px] tracking-[0.2em] text-tierra/50 uppercase font-sans">
                                 {String(current + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
                             </span>
                             <button
                                 onClick={next}
-                                className="w-10 h-10 border border-charcoal/30 hover:border-charcoal flex items-center justify-center transition-all duration-300 group"
+                                className="w-10 h-10 border border-tierra/30 hover:border-tierra flex items-center justify-center transition-all duration-300 group"
                             >
-                                <ChevronRight size={16} strokeWidth={1.5} className="text-charcoal/60 group-hover:text-charcoal transition-colors" />
+                                <ChevronRight size={16} strokeWidth={1.5} className="text-tierra/60 group-hover:text-tierra transition-colors" />
                             </button>
                         </div>
                     </div>

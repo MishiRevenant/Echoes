@@ -3,9 +3,9 @@ import Script from 'next/script';
 import './globals.css';
 
 export const metadata: Metadata = {
-    title: 'Belmond | Discover a New Pace of Travel',
+    title: 'Echoes of the Andes | Authentic Andean Experiences',
     description:
-        'Belmond offers a collection of iconic and storied luxury hotels, trains, river cruises, and safaris – seamlessly woven into the fabric of the world\'s most extraordinary destinations.',
+        'En Echoes of the Andes creemos que viajar no es solo desplazarse, sino escuchar, sentir y formar parte de un territorio vivo. Descubre experiencias auténticas y memorables en los Andes.',
 };
 
 export default function RootLayout({

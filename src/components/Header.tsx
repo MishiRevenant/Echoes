@@ -9,11 +9,10 @@ import { destinations } from '@/data/destinations';
 const navLinks = [
     { label: 'DESTINATIONS', href: '#belmond-section' },
     { label: 'EXPERIENCES', href: '#belmond-section' },
-    { label: 'PACKAGES & TOURS', href: '#belmond-section' },
-    { label: 'SIGNATURE SUITES & VILLAS', href: '#belmond-section' },
-    { label: 'OCCASIONS', href: '#belmond-section' },
-    { label: 'OFFERS', href: '#belmond-section' },
+    { label: 'ITINERARIES', href: '#belmond-section' },
+    { label: 'CULTURE & HERITAGE', href: '#belmond-section' },
     { label: 'STORIES', href: '#belmond-section' },
+    { label: 'CONTACT', href: '#belmond-section' },
 ];
 
 /* ── Available languages ─────────────────────────────────── */
@@ -86,11 +85,11 @@ export default function Header() {
     }, []);
 
     const headerBg = scrolled
-        ? 'bg-charcoal/95 backdrop-blur-md shadow-md'
+        ? 'bg-tierra/95 backdrop-blur-md shadow-md'
         : 'bg-black/30 backdrop-blur-sm';
 
     const subNavBg = scrolled
-        ? 'bg-charcoal/90 backdrop-blur-md'
+        ? 'bg-tierra/90 backdrop-blur-md'
         : 'bg-black/25 backdrop-blur-sm';
 
     /* Filter destinations by search query */
@@ -130,20 +129,27 @@ export default function Header() {
                         </button>
                     </div>
 
-                    {/* CENTER : Logo */}
+                    {/* CENTER : Brand Logo */}
                     <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
+                        {/*
+                          LOGO PLACEHOLDER
+                          When the brand logo is ready, replace this block with:
+
+                            <img src="/logo.svg" alt="Echoes of the Andes" className="h-8 md:h-10 w-auto" />
+                        */}
+
                         <div className="flex gap-3 mb-0.5">
                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-                                <circle cx="6" cy="6" r="4" stroke="white" strokeWidth="1" />
-                                <path d="M6 2 L6 10 M2 6 L10 6" stroke="white" strokeWidth="0.8" />
+                                <path d="M2 10 L6 2 L10 10" stroke="white" strokeWidth="1" fill="none" />
+                                <path d="M4 7 L8 7" stroke="white" strokeWidth="0.8" />
                             </svg>
                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-                                <path d="M2 2h8v8H2z" stroke="white" strokeWidth="1" fill="none" />
-                                <path d="M6 2v8M2 6h8" stroke="white" strokeWidth="0.8" />
+                                <path d="M2 10 L6 2 L10 10" stroke="white" strokeWidth="1" fill="none" />
+                                <path d="M4 7 L8 7" stroke="white" strokeWidth="0.8" />
                             </svg>
                         </div>
-                        <span className="text-white text-xl md:text-2xl tracking-[0.5em] font-light font-sans uppercase leading-none">
-                            BELMOND
+                        <span className="text-white text-base md:text-lg tracking-[0.3em] font-light font-display uppercase leading-none">
+                            ECHOES OF THE ANDES
                         </span>
                     </div>
 
@@ -176,7 +182,7 @@ export default function Header() {
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: -6 }}
                                         transition={{ duration: 0.2 }}
-                                        className="absolute top-full right-0 mt-3 bg-charcoal/95 backdrop-blur-md shadow-2xl border border-white/10 min-w-[140px] py-2 z-[200]"
+                                        className="absolute top-full right-0 mt-3 bg-tierra/95 backdrop-blur-md shadow-2xl border border-white/10 min-w-[140px] py-2 z-[200]"
                                     >
                                         {languages.map(lang => (
                                             <button
@@ -190,7 +196,7 @@ export default function Header() {
                                             >
                                                 {lang.label}
                                                 {currentLang === lang.gtCode && (
-                                                    <span className="w-1 h-1 rounded-full bg-earth flex-shrink-0" />
+                                                    <span className="w-1 h-1 rounded-full bg-arcilla flex-shrink-0" />
                                                 )}
                                             </button>
                                         ))}
@@ -274,12 +280,12 @@ export default function Header() {
                                                     onClick={() => setSearchOpen(false)}
                                                 >
                                                     <div>
-                                                        <p className="text-white text-xs tracking-[0.15em] uppercase group-hover:text-earth transition-colors duration-200">
+                                                        <p className="text-white text-xs tracking-[0.15em] uppercase group-hover:text-arcilla transition-colors duration-200">
                                                             {dest.name}
                                                         </p>
                                                         <p className="text-white/40 text-[10px] mt-0.5">{dest.region}</p>
                                                     </div>
-                                                    <ArrowRight size={12} strokeWidth={1.5} className="text-white/30 group-hover:text-earth transition-colors duration-200" />
+                                                    <ArrowRight size={12} strokeWidth={1.5} className="text-white/30 group-hover:text-arcilla transition-colors duration-200" />
                                                 </a>
                                             </li>
                                         ))}
@@ -328,12 +334,12 @@ export default function Header() {
                             animate={{ x: 0 }}
                             exit={{ x: '-100%' }}
                             transition={{ type: 'tween', duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-                            className="fixed top-0 left-0 bottom-0 z-[70] w-[min(85vw,340px)] bg-charcoal flex flex-col"
+                            className="fixed top-0 left-0 bottom-0 z-[70] w-[min(85vw,340px)] bg-tierra flex flex-col"
                         >
                             {/* Drawer Header */}
                             <div className="flex items-center justify-between px-6 h-16 border-b border-white/10">
-                                <span className="text-white text-lg tracking-[0.4em] font-light uppercase">
-                                    BELMOND
+                                <span className="text-white text-sm tracking-[0.25em] font-light font-display uppercase">
+                                    ECHOES OF THE ANDES
                                 </span>
                                 <button
                                     onClick={() => setMobileOpen(false)}

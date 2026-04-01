@@ -12,7 +12,7 @@ const PeruLeafletMap = dynamic(() => import('./PeruLeafletMap'), {
     ssr: false,
     loading: () => (
         <div className="w-full h-full flex items-center justify-center bg-cream-dark animate-pulse">
-            <p className="text-[10px] tracking-[0.2em] text-earth uppercase">Loading map…</p>
+            <p className="text-[10px] tracking-[0.2em] text-arcilla uppercase">Loading map…</p>
         </div>
     ),
 });
@@ -47,12 +47,12 @@ export default function PeruMapSection() {
             {/* ── Section Header ── */}
             <div className="text-center mb-10 px-6">
                 <p className="overline-text mb-3">Explore Peru</p>
-                <h2 className="font-serif text-3xl md:text-4xl font-light tracking-wider text-charcoal">
+                <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-wider text-tierra">
                     JOURNEY THROUGH THE ANDES
                 </h2>
-                <div className="mt-4 h-px w-16 bg-earth mx-auto" />
-                <p className="mt-5 text-sm text-charcoal-light font-light max-w-xl mx-auto leading-relaxed">
-                    Discover Peru's most extraordinary destinations. Select any pin to explore the region's hotels, experiences, and stories.
+                <div className="mt-4 h-px w-16 bg-arcilla mx-auto" />
+                <p className="mt-5 text-sm text-tierra-light font-light max-w-xl mx-auto leading-relaxed">
+                    Descubre los destinos más extraordinarios del Perú. Selecciona cualquier punto para explorar la región.
                 </p>
             </div>
 
@@ -64,7 +64,7 @@ export default function PeruMapSection() {
 
                     {/* Legend */}
                     <div className="absolute bottom-4 left-4 z-[1000] bg-white/90 backdrop-blur-sm px-4 py-3 shadow-sm">
-                        <p className="text-[9px] tracking-[0.2em] uppercase text-charcoal/60 mb-2">Legend</p>
+                        <p className="text-[9px] tracking-[0.2em] uppercase text-tierra/60 mb-2">Leyenda</p>
                         <div className="space-y-1.5">
                             {(
                                 [
@@ -82,7 +82,7 @@ export default function PeruMapSection() {
                                     >
                                         {dot}
                                     </span>
-                                    <span className="text-[9px] tracking-[0.1em] text-charcoal/70 uppercase">{label}</span>
+                                    <span className="text-[9px] tracking-[0.1em] text-tierra/70 uppercase">{label}</span>
                                 </div>
                             ))}
                         </div>
@@ -90,7 +90,7 @@ export default function PeruMapSection() {
                 </div>
 
                 {/* SIDEBAR PANEL */}
-                <div className="w-full lg:w-[380px] xl:w-[420px] flex-shrink-0 bg-charcoal min-h-[340px] lg:h-[700px] flex flex-col">
+                <div className="w-full lg:w-[380px] xl:w-[420px] flex-shrink-0 bg-tierra min-h-[340px] lg:h-[700px] flex flex-col">
                     {/* Destination List (scrollable, top) */}
                     <div className="flex-1 overflow-y-auto">
                         <div className="p-5 border-b border-white/10">
@@ -111,7 +111,7 @@ export default function PeruMapSection() {
                                         >
                                             {/* Number */}
                                             <span
-                                                className={`text-[11px] font-light flex-shrink-0 w-6 ${isActive ? 'text-earth' : 'text-white/30'}`}
+                                                className={`text-[11px] font-light flex-shrink-0 w-6 ${isActive ? 'text-arcilla' : 'text-white/30'}`}
                                             >
                                                 {String(i + 1).padStart(2, '0')}
                                             </span>
@@ -158,7 +158,7 @@ export default function PeruMapSection() {
 
                                 {/* Content */}
                                 <div className="absolute inset-0 p-5 flex flex-col justify-end">
-                                    <p className="overline-text text-earth/90 text-[8px] mb-1">{active.region}</p>
+                                    <p className="overline-text text-arcilla/90 text-[8px] mb-1">{active.region}</p>
                                     <h3 className="font-serif text-xl text-white font-light leading-tight mb-1">
                                         {active.name}
                                     </h3>

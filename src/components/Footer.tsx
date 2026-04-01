@@ -3,23 +3,28 @@
 import { motion } from 'framer-motion';
 
 const footerLinks = {
-    Explore: ['Destinations', 'Experiences', 'Packages & Tours', 'Occasions', 'Offers', 'Stories'],
-    'About Belmond': ['Our Vision', 'Careers', 'Press', 'Social Responsibility'],
-    'Guest Services': ['Account Login', 'Loyalty Programme', 'Gift Cards', 'Travel Agents'],
-    'Stay Connected': ['Newsletter', 'Instagram', 'Facebook', 'Pinterest', 'YouTube'],
+    Explorar: ['Destinos', 'Experiencias', 'Itinerarios', 'Cultura & Patrimonio', 'Testimonios', 'Galería'],
+    'Sobre Nosotros': ['Nuestra Visión', 'Equipo', 'Prensa', 'Responsabilidad Social'],
+    'Planifica tu Viaje': ['Inicio de sesión', 'Preguntas frecuentes', 'Tarjetas de regalo', 'Agentes de viaje'],
+    'Síguenos': ['Newsletter', 'Instagram', 'Facebook', 'Pinterest', 'YouTube'],
 };
 
 export default function Footer() {
     return (
-        <footer className="bg-charcoal text-white/70">
+        <footer className="bg-tierra text-white/70">
             {/* ── Upper Section ── */}
             <div className="max-w-[1200px] mx-auto px-8 pt-16 pb-10">
                 {/* Logo */}
                 <div className="text-center mb-14">
-                    <span className="text-white text-2xl tracking-[0.6em] font-light uppercase font-sans">
-                        BELMOND
+                    {/*
+                      LOGO PLACEHOLDER
+                      Replace the text below with:
+                      <img src="/logo.svg" alt="Echoes of the Andes" className="h-12 w-auto mx-auto" />
+                    */}
+                    <span className="text-white text-xl tracking-[0.3em] font-light font-display uppercase">
+                        ECHOES OF THE ANDES
                     </span>
-                    <div className="mt-4 h-px w-20 bg-earth/60 mx-auto" />
+                    <div className="mt-4 h-px w-20 bg-arcilla/60 mx-auto" />
                 </div>
 
                 {/* Links Grid */}
@@ -52,7 +57,7 @@ export default function Footer() {
             {/* ── Bottom Strip ── */}
             <div className="max-w-[1200px] mx-auto px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-3">
                 <p className="text-[10px] text-white/30 tracking-wide">
-                    © 2024 Belmond Management Ltd. All rights reserved.
+                    © 2025 Echoes of the Andes. All rights reserved.
                 </p>
                 <div className="flex gap-6">
                     {['Privacy Policy', 'Terms & Conditions', 'Cookie Settings', 'Accessibility'].map((t) => (
