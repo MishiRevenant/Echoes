@@ -5,81 +5,80 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 /* ──────────────────────────────────────────────────────────
-   Carousel data – mix of images & video
-   Using high-quality Pexels imagery & video of luxury interiors / travel
+   Carousel data — all content in English
 ────────────────────────────────────────────────────────── */
 const slides = [
     {
         type: 'image' as const,
         src: 'https://images.pexels.com/photos/2356059/pexels-photo-2356059.jpeg?auto=compress&w=900',
         alt: 'Machu Picchu at sunrise',
-        overline: 'PATRIMONIO DE LA HUMANIDAD',
-        heading: 'MACHU\nPICCHU,\nLA CIUDAD PERDIDA',
+        overline: 'WORLD HERITAGE SITE',
+        heading: 'MACHU\nPICCHU,\nTHE LOST CITY',
         body: [
-            'Suspendida entre nubes a 2.430 metros de altura, Machu Picchu es una de las maravillas más extraordinarias del mundo. Sus terrazas de piedra y templos del sol guardan siglos de historia inca.',
-            'Cada amanecer sobre la ciudadela es un eco que resuena entre las montañas, recordándonos que este territorio vive y respira con nosotros.',
+            'Suspended among clouds at 2,430 metres above sea level, Machu Picchu is one of the most extraordinary wonders of the world. Its stone terraces and sun temples hold centuries of Inca history.',
+            'Every dawn over the citadel is an echo that resonates between the mountains, reminding us that this territory is alive and breathes alongside us.',
         ],
-        cta: 'EXPLORAR MACHU PICCHU',
+        cta: 'EXPLORE MACHU PICCHU',
     },
     {
         type: 'image' as const,
         src: 'https://images.pexels.com/photos/3722818/pexels-photo-3722818.jpeg?auto=compress&w=900',
-        alt: 'Valle Sagrado de los Incas',
-        overline: 'CUSCO & VALLE SAGRADO',
-        heading: 'EL CORAZÓN\nDEL MUNDO\nINCА',
+        alt: 'Sacred Valley of the Incas',
+        overline: 'CUSCO & SACRED VALLEY',
+        heading: 'THE HEART\nOF THE\nINCA WORLD',
         body: [
-            'El Valle Sagrado serpentea entre Pisac y Ollantaytambo, flanqueado por ruinas andinas y mercados locales que mantienen vivas las tradiciones milenarias.',
-            'Aquí el tiempo fluye diferente. Los colores de los tejidos, el aroma de la tierra húmeda y el sonido de la quena te envuelven en una experiencia que no termina cuando regresas a casa.',
+            'The Sacred Valley winds between Pisac and Ollantaytambo, flanked by Andean ruins and local markets that keep millennia-old traditions alive.',
+            'Here time flows differently. The colours of the textiles, the scent of damp earth and the sound of the quena wrap you in an experience that does not end when you return home.',
         ],
-        cta: 'EXPLORAR EL VALLE SAGRADO',
+        cta: 'EXPLORE THE SACRED VALLEY',
     },
     {
         type: 'video' as const,
-        src: 'https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4',
-        alt: 'Cañón del Colca',
+        src: 'https://videos.pexels.com/video-files/3571264/3571264-hd_1920_1080_30fps.mp4',
+        alt: 'Colca Canyon',
         overline: 'AREQUIPA & COLCA',
-        heading: 'EL CAÑÓN\nMÁS PROFUNDO\nDEL MUNDO',
+        heading: 'THE WORLD\'S\nDEEPEST\nCANYON',
         body: [
-            'El Cañón del Colca, hogar del majestuoso cóndor andino, te invita a contemplar paisajes de una escala que desafía la imaginación.',
-            'Desde los miradores de Cruz del Cóndor, observa cómo estas aves de 3 metros de envergadura surcan las corrientes térmicas en silencio absoluto.',
+            'Colca Canyon, home of the majestic Andean condor, invites you to contemplate landscapes of a scale that defies imagination.',
+            'From the Cruz del Cóndor viewpoints, watch these birds with 3-metre wingspans soar on thermal currents in absolute silence.',
         ],
-        cta: 'EXPLORAR EL COLCA',
+        cta: 'EXPLORE COLCA CANYON',
     },
     {
         type: 'video' as const,
-        src: 'https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_30fps.mp4',
-        alt: 'Amazonía peruana',
-        overline: 'SELVA AMAZÓNICA',
-        heading: 'LA AMAZONÍA,\nEL PULMÓN\nDEL MUNDO',
+        src: 'https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_30fps.mp4',
+        alt: 'Peruvian Amazon',
+        overline: 'AMAZON RAINFOREST',
+        heading: 'THE AMAZON,\nLUNG OF\nTHE WORLD',
         body: [
-            'El Perú alberga una de las porciones más biodiversas de la cuenca amazónica. Lodges sostenibles en Madre de Dios o Loreto te conectan con este ecosistema único.',
-            'Recorridos nocturnos, avistamiento de aves y encuentros con comunidades indígenas convierten cada jornada en un aprendizaje que transforma.',
+            'Peru is home to one of the most biodiverse portions of the Amazon basin. Sustainable lodges in Madre de Dios or Loreto connect you with this unique ecosystem.',
+            'Night tours, birdwatching and encounters with indigenous communities turn every day into a transformative learning experience.',
         ],
-        cta: 'EXPLORAR LA AMAZONÍA',
+        cta: 'EXPLORE THE AMAZON',
     },
     {
         type: 'image' as const,
         src: 'https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg?auto=compress&w=900',
-        alt: 'Lago Titicaca',
-        overline: 'PUNO & LAGO TITICACA',
-        heading: 'EL LAGO\nMÁS ALTO\nDEL MUNDO',
+        alt: 'Lake Titicaca',
+        overline: 'PUNO & LAKE TITICACA',
+        heading: 'THE WORLD\'S\nHIGHEST\nNAVIGABLE LAKE',
         body: [
-            'A 3.812 m sobre el nivel del mar, el Lago Titicaca es cuna de la civilización andina. Las islas flotantes de los Uros y la isla Taquile guardan tradiciones que se remontan a siglos.',
-            'Navegar en sus aguas azules con la luz dorada del altiplano es una experiencia que se queda grabada en la memoria para siempre.',
+            'At 3,812 m above sea level, Lake Titicaca is the cradle of Andean civilisation. The floating islands of the Uros and Taquile Island preserve traditions dating back centuries.',
+            'Sailing its blue waters in the golden light of the altiplano is an experience that stays with you forever.',
         ],
-        cta: 'EXPLORAR EL TITICACA',
+        cta: 'EXPLORE LAKE TITICACA',
     },
     {
         type: 'video' as const,
-        src: 'https://videos.pexels.com/video-files/3886164/3886164-uhd_2560_1440_25fps.mp4',
-        alt: 'Lima, capital gastronómica',
-        overline: 'LIMA & LA COSTA',
-        heading: 'LIMA,\nCAPITAL\nGASTRONÓMICA',
+        src: 'https://videos.pexels.com/video-files/3886164/3886164-hd_1920_1080_25fps.mp4',
+        alt: 'Lima, gastronomic capital',
+        overline: 'LIMA & THE COAST',
+        heading: 'LIMA,\nGASTRONOMIC\nCAPITAL',
         body: [
-            'Lima no es solo una puerta de entrada al Perú; es un destino en sí misma. Su escena culinaria, reconocida mundialmente, fusiona tradiciones andinas, amazónicas y de la costa.',
-            'Del Miraflores colonial al circuito de arte y gastronomía de Barranco, Lima es la ciudad donde los ecos del pasado se encuentran con la creatividad del presente.',
+            'Lima is not just a gateway to Peru — it is a destination in its own right. Its world-renowned culinary scene fuses Andean, Amazonian and coastal traditions.',
+            'From colonial Miraflores to the art and gastronomy circuit of Barranco, Lima is the city where echoes of the past meet the creativity of the present.',
         ],
-        cta: 'EXPLORAR LIMA',
+        cta: 'EXPLORE LIMA',
     },
 ];
 
@@ -98,6 +97,7 @@ function VideoSlide({ src, poster }: { src: string; poster?: string }) {
             muted
             loop
             playsInline
+            preload="metadata"
             className="w-full h-full object-cover"
         />
     );
@@ -132,7 +132,13 @@ export default function BelmondSection() {
         <section id="belmond-section" className="bg-crema py-16 md:py-24">
             {/* ── Section Title ── */}
             <div className="text-center mb-10 md:mb-14 px-6">
-                <p className="overline-text mb-3">Experiencias</p>
+                <div className="flex items-center justify-center gap-3 mb-3">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/LogoSolo-white.svg" alt="" className="h-5 w-auto opacity-60" style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(30%) saturate(400%) hue-rotate(5deg)' }} aria-hidden="true" />
+                    <p className="overline-text">Experiences</p>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/LogoSolo-white.svg" alt="" className="h-5 w-auto opacity-60" style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(30%) saturate(400%) hue-rotate(5deg)' }} aria-hidden="true" />
+                </div>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-wider text-tierra">
                     ECHOES OF THE ANDES
                 </h2>
@@ -231,7 +237,7 @@ export default function BelmondSection() {
                                     ))}
                                 </div>
 
-                                <a href="#" className="cta-link mt-2">
+                                <a href="/destinations" className="cta-link mt-2">
                                     {slide.cta}
                                 </a>
                             </motion.div>

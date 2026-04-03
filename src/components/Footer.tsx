@@ -3,10 +3,32 @@
 import { motion } from 'framer-motion';
 
 const footerLinks = {
-    Explorar: ['Destinos', 'Experiencias', 'Itinerarios', 'Cultura & Patrimonio', 'Testimonios', 'Galería'],
-    'Sobre Nosotros': ['Nuestra Visión', 'Equipo', 'Prensa', 'Responsabilidad Social'],
-    'Planifica tu Viaje': ['Inicio de sesión', 'Preguntas frecuentes', 'Tarjetas de regalo', 'Agentes de viaje'],
-    'Síguenos': ['Newsletter', 'Instagram', 'Facebook', 'Pinterest', 'YouTube'],
+    Explore: ['Destinations', 'Experiences', 'Itineraries', 'Culture & Heritage', 'Testimonials', 'Gallery'],
+    'About Us': ['Our Vision', 'Team', 'Press', 'Social Responsibility'],
+    'Plan Your Trip': ['Sign In', 'FAQ', 'Gift Cards', 'Travel Agents'],
+    'Follow Us': ['Newsletter', 'Instagram', 'Facebook', 'Pinterest', 'YouTube'],
+};
+
+const linkHrefs: Record<string, string> = {
+    'Destinations': '/destinations',
+    'Experiences': '/experiences',
+    'Itineraries': '/packages',
+    'Culture & Heritage': '/culture',
+    'Gallery': '#',
+    'Testimonials': '#',
+    'Our Vision': '#',
+    'Team': '#',
+    'Press': '#',
+    'Social Responsibility': '#',
+    'Sign In': '#',
+    'FAQ': '#',
+    'Gift Cards': '#',
+    'Travel Agents': '#',
+    'Newsletter': '#',
+    'Instagram': 'https://instagram.com',
+    'Facebook': 'https://facebook.com',
+    'Pinterest': 'https://pinterest.com',
+    'YouTube': 'https://youtube.com',
 };
 
 export default function Footer() {
@@ -16,14 +38,13 @@ export default function Footer() {
             <div className="max-w-[1200px] mx-auto px-8 pt-16 pb-10">
                 {/* Logo */}
                 <div className="text-center mb-14">
-                    {/*
-                      LOGO PLACEHOLDER
-                      Replace the text below with:
-                      <img src="/logo.svg" alt="Echoes of the Andes" className="h-12 w-auto mx-auto" />
-                    */}
-                    <span className="text-white text-xl tracking-[0.3em] font-light font-display uppercase">
-                        ECHOES OF THE ANDES
-                    </span>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                        src="/LogoCompleto-white.svg"
+                        alt="Echoes of the Andes"
+                        className="h-14 w-auto mx-auto"
+                        style={{ filter: 'brightness(0) invert(1)' }}
+                    />
                     <div className="mt-4 h-px w-20 bg-arcilla/60 mx-auto" />
                 </div>
 
@@ -38,7 +59,7 @@ export default function Footer() {
                                 {links.map((link) => (
                                     <li key={link}>
                                         <a
-                                            href="#"
+                                            href={linkHrefs[link] ?? '#'}
                                             className="text-[12px] tracking-wide text-white/50 hover:text-white/90 transition-colors duration-300"
                                         >
                                             {link}

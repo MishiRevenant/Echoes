@@ -4,11 +4,11 @@ import { useRef, useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Pause, Play, ChevronDown } from 'lucide-react';
 
-/* ── Pexels free-use video URLs ──────────────────────────── */
+/* ── Pexels free-use video URLs — 1080p/720p for fast loading ── */
 const videos = [
-    'https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4',
-    'https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_30fps.mp4',
-    'https://videos.pexels.com/video-files/3886164/3886164-uhd_2560_1440_25fps.mp4',
+    'https://videos.pexels.com/video-files/3571264/3571264-hd_1920_1080_30fps.mp4',
+    'https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_30fps.mp4',
+    'https://videos.pexels.com/video-files/3886164/3886164-hd_1920_1080_25fps.mp4',
 ];
 
 export default function HeroSection() {
@@ -22,6 +22,12 @@ export default function HeroSection() {
     const [showA, setShowA] = useState(true);
     // Index of the video currently shown on the VISIBLE slot
     const [curIdx, setCurIdx] = useState(0);
+
+    /* Fallback: show content after 3 s even if video hasn't fired canplay */
+    useEffect(() => {
+        const t = setTimeout(() => setLoaded(true), 3000);
+        return () => clearTimeout(t);
+    }, []);
 
     /* Preload the NEXT video into the hidden slot whenever curIdx changes */
     useEffect(() => {
@@ -75,7 +81,7 @@ export default function HeroSection() {
                 onEnded={showA ? handleEnded : undefined}
             />
 
-            {/* ── Video B ── */}
+            {/* ── Video B — preload metadata only until needed ── */}
             <video
                 ref={refB}
                 className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
@@ -85,7 +91,7 @@ export default function HeroSection() {
                 }}
                 muted
                 playsInline
-                preload="auto"
+                preload="metadata"
                 src={videos[1]}
                 onEnded={!showA ? handleEnded : undefined}
             />
@@ -101,15 +107,16 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-                            className="space-y-8"
+                            className="space-y-8 flex flex-col items-center"
                         >
-                            {/* Heading */}
-                            <h1
-                                className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-wider text-white leading-tight"
-                                style={{ textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}
-                            >
-                                ECHOES OF<br className="hidden sm:block" /> THE ANDES
-                            </h1>
+                            {/* Full Logo — white, centered */}
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="/LogoCompleto-white.svg"
+                                alt="Echoes of the Andes"
+                                className="w-auto mx-auto"
+                                style={{ height: 'clamp(80px, 18vw, 200px)' }}
+                            />
 
                             {/* Learn More Button */}
                             <motion.button
@@ -127,9 +134,9 @@ export default function HeroSection() {
 
                 {/* Shimmer while loading */}
                 {!loaded && (
-                    <div className="space-y-6 text-center">
-                        <div className="h-16 w-96 bg-white/10 animate-pulse rounded mx-auto" />
-                        <div className="h-10 w-32 bg-white/10 animate-pulse rounded mx-auto" />
+                    <div className="space-y-6 text-center flex flex-col items-center">
+                        <div className="h-40 w-72 bg-white/10 animate-pulse rounded mx-auto" />
+                        <div className="h-10 w-40 bg-white/10 animate-pulse rounded mx-auto" />
                     </div>
                 )}
             </div>

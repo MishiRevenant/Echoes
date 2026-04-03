@@ -43,7 +43,7 @@ export default function PeruMapSection() {
     }, []);
 
     return (
-        <section className="bg-warm-white pt-16 pb-0 overflow-hidden">
+        <section id="map-section" className="bg-warm-white pt-16 pb-0 overflow-hidden">
             {/* ── Section Header ── */}
             <div className="text-center mb-10 px-6">
                 <p className="overline-text mb-3">Explore Peru</p>
@@ -52,7 +52,7 @@ export default function PeruMapSection() {
                 </h2>
                 <div className="mt-4 h-px w-16 bg-arcilla mx-auto" />
                 <p className="mt-5 text-sm text-tierra-light font-light max-w-xl mx-auto leading-relaxed">
-                    Descubre los destinos más extraordinarios del Perú. Selecciona cualquier punto para explorar la región.
+                    Discover Peru's most extraordinary destinations. Select any point on the map to explore the region.
                 </p>
             </div>
 
@@ -64,7 +64,7 @@ export default function PeruMapSection() {
 
                     {/* Legend */}
                     <div className="absolute bottom-4 left-4 z-[1000] bg-white/90 backdrop-blur-sm px-4 py-3 shadow-sm">
-                        <p className="text-[9px] tracking-[0.2em] uppercase text-tierra/60 mb-2">Leyenda</p>
+                        <p className="text-[9px] tracking-[0.2em] uppercase text-tierra/60 mb-2">Legend</p>
                         <div className="space-y-1.5">
                             {(
                                 [

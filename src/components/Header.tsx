@@ -7,12 +7,13 @@ import { destinations } from '@/data/destinations';
 
 /* ── Nav links with routing targets ─────────────────────── */
 const navLinks = [
-    { label: 'DESTINATIONS', href: '#belmond-section' },
-    { label: 'EXPERIENCES', href: '#belmond-section' },
-    { label: 'ITINERARIES', href: '#belmond-section' },
-    { label: 'CULTURE & HERITAGE', href: '#belmond-section' },
-    { label: 'STORIES', href: '#belmond-section' },
-    { label: 'CONTACT', href: '#belmond-section' },
+    { label: 'DESTINATIONS', href: '/destinations' },
+    { label: 'EXPERIENCES', href: '/experiences' },
+    { label: 'PACKAGES', href: '/packages' },
+    { label: 'CULTURE & HERITAGE', href: '/culture' },
+    { label: 'BLOG', href: '/blog' },
+    { label: 'MAP', href: '#map-section' },
+    { label: 'CONTACT', href: '/contact' },
 ];
 
 /* ── Available languages ─────────────────────────────────── */
@@ -54,6 +55,7 @@ export default function Header() {
     const [langOpen, setLangOpen] = useState(false);
     const [mobileLangOpen, setMobileLangOpen] = useState(false);
     const [currentLang, setCurrentLang] = useState('en');
+    const [logoLoaded, setLogoLoaded] = useState(false);
     const searchInputRef = useRef<HTMLInputElement>(null);
     const langRef = useRef<HTMLDivElement>(null);
 
@@ -83,6 +85,21 @@ export default function Header() {
         document.addEventListener('mousedown', handler);
         return () => document.removeEventListener('mousedown', handler);
     }, []);
+
+    /* Fallback: if logo image never fires onLoad, show it anyway after 2s */
+    useEffect(() => {
+        const t = setTimeout(() => setLogoLoaded(true), 2000);
+        return () => clearTimeout(t);
+    }, []);
+
+    const handleNavClick = (href: string, e: React.MouseEvent) => {
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const el = document.getElementById(href.slice(1));
+            el?.scrollIntoView({ behavior: 'smooth' });
+        }
+        setMobileOpen(false);
+    };
 
     const headerBg = scrolled
         ? 'bg-tierra/95 backdrop-blur-md shadow-md'
@@ -131,26 +148,24 @@ export default function Header() {
 
                     {/* CENTER : Brand Logo */}
                     <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
-                        {/*
-                          LOGO PLACEHOLDER
-                          When the brand logo is ready, replace this block with:
-
-                            <img src="/logo.svg" alt="Echoes of the Andes" className="h-8 md:h-10 w-auto" />
-                        */}
-
-                        <div className="flex gap-3 mb-0.5">
-                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-                                <path d="M2 10 L6 2 L10 10" stroke="white" strokeWidth="1" fill="none" />
-                                <path d="M4 7 L8 7" stroke="white" strokeWidth="0.8" />
-                            </svg>
-                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-                                <path d="M2 10 L6 2 L10 10" stroke="white" strokeWidth="1" fill="none" />
-                                <path d="M4 7 L8 7" stroke="white" strokeWidth="0.8" />
-                            </svg>
+                        {/* Logo image — fades in on load, fallback text shown if it fails */}
+                        <div className="relative h-10 md:h-12 flex items-center justify-center">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="/LogoHeader-white.svg"
+                                alt="Echoes of the Andes"
+                                className={`h-10 md:h-12 w-auto object-contain transition-opacity duration-500 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
+                                onLoad={() => setLogoLoaded(true)}
+                                onError={() => setLogoLoaded(true)}
+                                style={{ maxWidth: '220px' }}
+                            />
+                            {/* Fallback text — shown while logo loads */}
+                            {!logoLoaded && (
+                                <span className="absolute inset-0 flex items-center justify-center text-white text-base md:text-lg tracking-[0.3em] font-light font-display uppercase leading-none whitespace-nowrap">
+                                    ECHOES OF THE ANDES
+                                </span>
+                            )}
                         </div>
-                        <span className="text-white text-base md:text-lg tracking-[0.3em] font-light font-display uppercase leading-none">
-                            ECHOES OF THE ANDES
-                        </span>
                     </div>
 
                     {/* RIGHT : Language | Account | Book */}
@@ -211,18 +226,22 @@ export default function Header() {
                             <span className="text-[10px] tracking-[0.15em] uppercase">Account</span>
                         </button>
                         {/* Book – always visible */}
-                        <button className="book-btn text-[9px] md:text-[10px] px-3 md:px-5 py-1.5 md:py-2">
+                        <a href="/packages" className="book-btn text-[9px] md:text-[10px] px-3 md:px-5 py-1.5 md:py-2">
                             BOOK
-                        </button>
+                        </a>
                     </div>
                 </div>
 
                 {/* ── Sub Navigation (desktop) ── */}
                 <nav className={`hidden md:block transition-all duration-500 ${subNavBg} border-t border-white/10`}>
-                    <ul className="flex items-center justify-center gap-6 lg:gap-8 py-3">
+                    <ul className="flex items-center justify-center gap-5 lg:gap-6 py-3">
                         {navLinks.map((link) => (
                             <li key={link.label}>
-                                <a href={link.href} className="nav-link flex items-center gap-2 group">
+                                <a
+                                    href={link.href}
+                                    className="nav-link flex items-center gap-2 group"
+                                    onClick={(e) => handleNavClick(link.href, e)}
+                                >
                                     <span className="text-white/40 group-hover:text-white/60 transition-colors">◆</span>
                                     {link.label}
                                 </a>
@@ -338,9 +357,13 @@ export default function Header() {
                         >
                             {/* Drawer Header */}
                             <div className="flex items-center justify-between px-6 h-16 border-b border-white/10">
-                                <span className="text-white text-sm tracking-[0.25em] font-light font-display uppercase">
-                                    ECHOES OF THE ANDES
-                                </span>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src="/LogoHeader-white.svg"
+                                    alt="Echoes of the Andes"
+                                    className="h-8 w-auto object-contain"
+                                    style={{ maxWidth: '160px' }}
+                                />
                                 <button
                                     onClick={() => setMobileOpen(false)}
                                     className="text-white/70 hover:text-white transition-colors"
@@ -362,7 +385,7 @@ export default function Header() {
                                             <a
                                                 href={link.href}
                                                 className="text-white/80 hover:text-white text-xs tracking-[0.2em] uppercase transition-colors duration-300"
-                                                onClick={() => setMobileOpen(false)}
+                                                onClick={(e) => handleNavClick(link.href, e)}
                                             >
                                                 {link.label}
                                             </a>

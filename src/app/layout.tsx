@@ -5,7 +5,7 @@ import './globals.css';
 export const metadata: Metadata = {
     title: 'Echoes of the Andes | Authentic Andean Experiences',
     description:
-        'En Echoes of the Andes creemos que viajar no es solo desplazarse, sino escuchar, sentir y formar parte de un territorio vivo. Descubre experiencias auténticas y memorables en los Andes.',
+        'At Echoes of the Andes we believe travel is not just about moving — it\'s about listening, feeling, and becoming part of a living territory. Discover authentic and unforgettable experiences in the Andes.',
 };
 
 export default function RootLayout({
